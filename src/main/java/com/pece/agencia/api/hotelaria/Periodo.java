@@ -1,4 +1,4 @@
-package com.pece.agencia.api.hotelaria.domain;
+package com.pece.agencia.api.hotelaria;
 
 import java.time.LocalDate;
 

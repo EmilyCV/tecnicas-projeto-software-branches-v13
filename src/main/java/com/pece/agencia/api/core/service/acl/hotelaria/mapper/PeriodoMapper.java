@@ -1,6 +1,6 @@
 package com.pece.agencia.api.core.service.acl.hotelaria.mapper;
 
-import com.pece.agencia.api.hotelaria.domain.Periodo;
+import com.pece.agencia.api.hotelaria.Periodo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

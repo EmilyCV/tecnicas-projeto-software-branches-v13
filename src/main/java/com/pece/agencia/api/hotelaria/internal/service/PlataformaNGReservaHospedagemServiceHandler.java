@@ -1,7 +1,8 @@
-package com.pece.agencia.api.hotelaria.service;
+package com.pece.agencia.api.hotelaria.internal.service;
 
-import com.pece.agencia.api.hotelaria.domain.OfertaHospedagemPlataformaMapping;
-import com.pece.agencia.api.hotelaria.domain.Plataforma;
+import com.pece.agencia.api.hotelaria.ReservaHospedagemRequest;
+import com.pece.agencia.api.hotelaria.internal.domain.OfertaHospedagemPlataformaMapping;
+import com.pece.agencia.api.hotelaria.Plataforma;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -12,12 +13,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class PlataformaNGReservaHospedagemServiceHandler implements ReservaHospedagemServiceHandler{
+public class PlataformaNGReservaHospedagemServiceHandler implements ReservaHospedagemServiceHandler {
 
     @Value("${plataforma.hotel.ng.url}")
     private String plataformaHotelNgBaseUrl;
 
-    private URI primeiroPassoReservaNg(OfertaHospedagemPlataformaMapping mapping, ReservaHospedagemService.ReservaHospedagemRequest request) {
+    private URI primeiroPassoReservaNg(OfertaHospedagemPlataformaMapping mapping, ReservaHospedagemRequest request) {
         String idPlataformaHotel = mapping.getCodigoHotel();
         String codigoPromocao = mapping.getCodigoPromocao();
 
@@ -51,7 +52,7 @@ public class PlataformaNGReservaHospedagemServiceHandler implements ReservaHospe
     }
 
     @Override
-    public String reservar(OfertaHospedagemPlataformaMapping mapping, ReservaHospedagemService.ReservaHospedagemRequest request) {
+    public String reservar(OfertaHospedagemPlataformaMapping mapping, ReservaHospedagemRequest request) {
         URI novaReserva = this.primeiroPassoReservaNg(mapping, request);
         return segundoPassoReservaNg(novaReserva);
     }

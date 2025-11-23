@@ -1,6 +1,7 @@
-package com.pece.agencia.api.hotelaria.domain;
+package com.pece.agencia.api.hotelaria.internal.domain;
 
 import com.pece.agencia.api.common.hibernate.UuidV7BasedID;
+import com.pece.agencia.api.hotelaria.Plataforma;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.JdbcTypeCode;
