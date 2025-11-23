@@ -1,4 +1,4 @@
-package com.pece.agencia.api.pagamento.domain;
+package com.pece.agencia.api.pagamento;
 
 import java.time.YearMonth;
 
