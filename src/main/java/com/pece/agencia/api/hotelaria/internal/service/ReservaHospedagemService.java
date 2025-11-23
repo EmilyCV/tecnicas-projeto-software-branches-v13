@@ -1,9 +1,9 @@
-package com.pece.agencia.api.hotelaria.service;
+package com.pece.agencia.api.hotelaria.internal.service;
 
-import com.pece.agencia.api.hotelaria.domain.Hospede;
-import com.pece.agencia.api.hotelaria.domain.OfertaHospedagemPlataformaMapping;
-import com.pece.agencia.api.hotelaria.domain.Periodo;
-import com.pece.agencia.api.hotelaria.repository.OfertaHospedagemPlataformaMappingRepository;
+import com.pece.agencia.api.hotelaria.PlataformaHotelaria;
+import com.pece.agencia.api.hotelaria.ReservaHospedagemRequest;
+import com.pece.agencia.api.hotelaria.internal.domain.OfertaHospedagemPlataformaMapping;
+import com.pece.agencia.api.hotelaria.internal.repository.OfertaHospedagemPlataformaMappingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class ReservaHospedagemService {
+public class ReservaHospedagemService implements PlataformaHotelaria {
     private final OfertaHospedagemPlataformaMappingRepository repository;
 
     private final List<ReservaHospedagemServiceHandler> handlers;
@@ -30,8 +30,5 @@ public class ReservaHospedagemService {
     public String obterIdPlataforma(UUID codigoPromocao) {
         OfertaHospedagemPlataformaMapping mapping = repository.findById(codigoPromocao).get();
         return mapping.getCodigoHotel();
-    }
-
-    public record ReservaHospedagemRequest(UUID codigoPromocao, Hospede hospede, Periodo periodo) {
     }
 }

@@ -4,7 +4,9 @@ import com.pece.agencia.api.core.service.acl.hotelaria.mapper.ReservaHospedagemR
 import com.pece.agencia.api.core.domain.Cliente;
 import com.pece.agencia.api.core.domain.OfertaHospedagem;
 import com.pece.agencia.api.core.domain.Periodo;
-import com.pece.agencia.api.hotelaria.service.ReservaHospedagemService;
+import com.pece.agencia.api.hotelaria.PlataformaHotelaria;
+import com.pece.agencia.api.hotelaria.ReservaHospedagemRequest;
+import com.pece.agencia.api.hotelaria.internal.service.ReservaHospedagemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,10 @@ import org.springframework.stereotype.Service;
 public class ReservaHospedagemServiceAdapter {
 
     private final ReservaHospedagemRequestMapper mapper;
-    private final ReservaHospedagemService hospedagemService;
+    private final PlataformaHotelaria hospedagemService;
 
     public String reservar(OfertaHospedagem hospedagem, Cliente cliente, Periodo periodoViagem) {
-        ReservaHospedagemService.ReservaHospedagemRequest request = mapper.toRequest(hospedagem, cliente, periodoViagem);
+        ReservaHospedagemRequest request = mapper.toRequest(hospedagem, cliente, periodoViagem);
         return hospedagemService.reservar(request);
     }
 
