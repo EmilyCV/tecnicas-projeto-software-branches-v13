@@ -1,4 +1,4 @@
-package com.pece.agencia.api.aereo.domain;
+package com.pece.agencia.api.aereo;
 
 public record Passageiro(String nome) {
 }

@@ -1,7 +1,6 @@
 package com.pece.agencia.api.hotelaria.internal.service;
 
 import com.pece.agencia.api.hotelaria.PlataformaHotelaria;
-import com.pece.agencia.api.hotelaria.ReservaHospedagemRequest;
 import com.pece.agencia.api.hotelaria.internal.domain.OfertaHospedagemPlataformaMapping;
 import com.pece.agencia.api.hotelaria.internal.repository.OfertaHospedagemPlataformaMappingRepository;
 import lombok.RequiredArgsConstructor;

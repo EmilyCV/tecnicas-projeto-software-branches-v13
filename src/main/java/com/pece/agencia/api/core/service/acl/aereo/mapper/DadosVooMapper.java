@@ -1,6 +1,6 @@
 package com.pece.agencia.api.core.service.acl.aereo.mapper;
 
-import com.pece.agencia.api.aereo.domain.DadosVoo;
+import com.pece.agencia.api.aereo.DadosVoo;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -1,7 +1,5 @@
 package com.pece.agencia.api.veiculo;
 
-import com.pece.agencia.api.hotelaria.Periodo;
-
 import java.util.UUID;
 
 public interface PlataformaLocacaoVeiculo {
