@@ -15,5 +15,5 @@ public interface ReservaVooMapper {
     @Mapping(source = "assento", target = "assento")
     @Mapping(source = "horarioEmbarque", target = "horarioEmbarque")
     @Mapping(source = "dadosVoo", target = "dadosVoo")
-    ReservaVoo toReservaVoo(com.pece.agencia.api.aereo.domain.ReservaVoo reservaVoo);
+    ReservaVoo toReservaVoo(com.pece.agencia.api.aereo.ReservaVoo reservaVoo);
 }

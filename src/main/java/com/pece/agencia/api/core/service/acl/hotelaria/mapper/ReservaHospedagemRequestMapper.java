@@ -3,7 +3,7 @@ package com.pece.agencia.api.core.service.acl.hotelaria.mapper;
 import com.pece.agencia.api.core.domain.Cliente;
 import com.pece.agencia.api.core.domain.OfertaHospedagem;
 import com.pece.agencia.api.core.domain.Periodo;
-import com.pece.agencia.api.hotelaria.service.ReservaHospedagemService;
+import com.pece.agencia.api.hotelaria.PlataformaHotelaria;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -18,5 +18,5 @@ public interface ReservaHospedagemRequestMapper {
     @Mapping(source = "hospedagem.id", target = "codigoPromocao")
     @Mapping(source = "cliente", target = "hospede")
     @Mapping(source = "periodoHospedagem", target = "periodo")
-    ReservaHospedagemService.ReservaHospedagemRequest toRequest(OfertaHospedagem hospedagem, Cliente cliente, Periodo periodoHospedagem);
+    PlataformaHotelaria.ReservaHospedagemRequest toRequest(OfertaHospedagem hospedagem, Cliente cliente, Periodo periodoHospedagem);
 }

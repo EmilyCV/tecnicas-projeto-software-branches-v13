@@ -1,7 +1,8 @@
-package com.pece.agencia.api.hotelaria.service;
+package com.pece.agencia.api.hotelaria.internal.service;
 
-import com.pece.agencia.api.hotelaria.domain.OfertaHospedagemPlataformaMapping;
-import com.pece.agencia.api.hotelaria.domain.Plataforma;
+import com.pece.agencia.api.hotelaria.PlataformaHotelaria;
+import com.pece.agencia.api.hotelaria.internal.domain.OfertaHospedagemPlataformaMapping;
+import com.pece.agencia.api.hotelaria.Plataforma;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -11,7 +12,7 @@ import java.util.Map;
 
 
 @Component
-public class PlataformaRegularReservaHospedagemServiceHandler implements ReservaHospedagemServiceHandler{
+public class PlataformaRegularReservaHospedagemServiceHandler implements ReservaHospedagemServiceHandler {
     @Value("${plataforma.hotel.regular.url}")
     private String plataformaHotelRegularBaseUrl;
 
@@ -21,7 +22,7 @@ public class PlataformaRegularReservaHospedagemServiceHandler implements Reserva
     }
 
     @Override
-    public String reservar(OfertaHospedagemPlataformaMapping mapping, ReservaHospedagemService.ReservaHospedagemRequest request) {
+    public String reservar(OfertaHospedagemPlataformaMapping mapping, PlataformaHotelaria.ReservaHospedagemRequest request) {
         Map<String, String> requestPayload = new HashMap<>();
 
         requestPayload.put("hospede", request.hospede().nome());

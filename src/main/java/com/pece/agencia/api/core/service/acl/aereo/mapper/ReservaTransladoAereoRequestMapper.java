@@ -1,6 +1,6 @@
 package com.pece.agencia.api.core.service.acl.aereo.mapper;
 
-import com.pece.agencia.api.aereo.service.ReservaTransladoAereoService;
+import com.pece.agencia.api.aereo.PlataformaTransladoAereo;
 import com.pece.agencia.api.core.domain.Cliente;
 import com.pece.agencia.api.core.domain.DadosVoo;
 import org.mapstruct.Mapper;
@@ -19,5 +19,5 @@ public interface ReservaTransladoAereoRequestMapper {
     @Mapping(source = "cliente", target = "passageiro")
     @Mapping(source = "dadosVoo", target = "dadosVoo")
     @Mapping(source = "data", target = "data")
-    ReservaTransladoAereoService.ReservaTransladoAereoRequest toRequest(Cliente cliente, DadosVoo dadosVoo, LocalDate data);
+    PlataformaTransladoAereo.ReservaTransladoAereoRequest toRequest(Cliente cliente, DadosVoo dadosVoo, LocalDate data);
 }

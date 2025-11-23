@@ -1,7 +1,7 @@
 package com.pece.agencia.api.core.service.acl.pagamento.mapper;
 
 
-import com.pece.agencia.api.pagamento.domain.DadosCartao;
+import com.pece.agencia.api.pagamento.DadosCartao;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
